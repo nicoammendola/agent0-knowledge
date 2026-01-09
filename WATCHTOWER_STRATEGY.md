@@ -104,7 +104,7 @@ Watchtower tells you: "This agent is working right now."
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │  WATCHTOWER MEASURES                    │  LEAVE TO OTHERS                  │
-│  ───────────────────                    │  ────────────────                  │
+│  ───────────────────                    │  ────────────────                 │
 │                                         │                                   │
 │  • Is it online?                        │  • Is it good at its job?         │
 │  • Is it fast?                          │  • Is the output accurate?        │
@@ -294,7 +294,7 @@ Watchtower tells you: "This agent is working right now."
 │  Returns: Historical health data                                            │
 │  {                                                                          │
 │    "uptime": { "24h": 99.9, "7d": 99.5, "30d": 98.2 },                      │
-│    "incidents": [ { "start": "...", "end": "...", "type": "outage" } ],    │
+│    "incidents": [ { "start": "...", "end": "...", "type": "outage" } ],     │
 │    "latencyTrend": [ { "date": "...", "p50": 120 }, ... ]                   │
 │  }                                                                          │
 │                                                                             │
@@ -308,10 +308,10 @@ Watchtower tells you: "This agent is working right now."
 │  {                                                                          │
 │    "score": 95,                                                             │
 │    "protocols": {                                                           │
-│      "mcp": { "compliant": true, "version": "2025-06-18" },                │
-│      "a2a": { "compliant": true, "version": "0.3.0" }                      │
+│      "mcp": { "compliant": true, "version": "2025-06-18" },                 │
+│      "a2a": { "compliant": true, "version": "0.3.0" }                       │
 │    },                                                                       │
-│    "issues": [ { "severity": "warning", "message": "..." } ],              │
+│    "issues": [ { "severity": "warning", "message": "..." } ],               │
 │    "lastCheck": "2026-01-09T11:00:00Z"                                      │
 │  }                                                                          │
 │                                                                             │
@@ -339,8 +339,8 @@ Watchtower tells you: "This agent is working right now."
 │  GET /api/v1/alerts/{agentId}                                               │
 │  Returns: Recent alerts and incidents                                       │
 │  {                                                                          │
-│    "activeAlerts": [ { "type": "high_latency", "since": "..." } ],         │
-│    "recentIncidents": [ { "type": "outage", "duration": 300, ... } ],      │
+│    "activeAlerts": [ { "type": "high_latency", "since": "..." } ],          │
+│    "recentIncidents": [ { "type": "outage", "duration": 300, ... } ],       │
 │    "incidentCount": { "24h": 0, "7d": 1, "30d": 3 }                         │
 │  }                                                                          │
 │                                                                             │
@@ -431,7 +431,7 @@ Watchtower data becomes one of three pillars in the overall Trust Score:
 │  • Reputation: 4.2/5 weighted score → 84/100                                │
 │  • Watchtower: 99.5% uptime, 150ms (fast), 95% compliance → 95/100          │
 │                                                                             │
-│  Trust Score = 0.3(70) + 0.4(84) + 0.3(95) = 21 + 33.6 + 28.5 = 83.1       │
+│  Trust Score = 0.3(70) + 0.4(84) + 0.3(95) = 21 + 33.6 + 28.5 = 83.1        │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -601,10 +601,10 @@ At $100/month for Tier 3 certification:
 │                      WATCHTOWER ARCHITECTURE                                │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
-│  ┌─────────────┐     ┌─────────────┐     ┌─────────────┐                   │
-│  │  Scheduler  │────▶│   Workers   │────▶│  Agents     │                   │
-│  │  (Cron)     │     │  (Lambda)   │     │  (Targets)  │                   │
-│  └─────────────┘     └──────┬──────┘     └─────────────┘                   │
+│  ┌─────────────┐     ┌─────────────┐     ┌─────────────┐                    │
+│  │  Scheduler  │────▶│   Workers   │────▶│  Agents     │                    │
+│  │  (Cron)     │     │  (Lambda)   │     │  (Targets)  │                    │
+│  └─────────────┘     └──────┬──────┘     └─────────────┘                    │
 │                             │                                               │
 │                             ▼                                               │
 │                      ┌─────────────┐                                        │
@@ -615,10 +615,10 @@ At $100/month for Tier 3 certification:
 │                             │                                               │
 │            ┌────────────────┼────────────────┐                              │
 │            ▼                ▼                ▼                              │
-│     ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                      │
-│     │  REST API   │  │  Webhooks   │  │  Subgraph   │                      │
-│     │  (Public)   │  │  (Alerts)   │  │  (Index)    │                      │
-│     └─────────────┘  └─────────────┘  └─────────────┘                      │
+│     ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                       │
+│     │  REST API   │  │  Webhooks   │  │  Subgraph   │                       │
+│     │  (Public)   │  │  (Alerts)   │  │  (Index)    │                       │
+│     └─────────────┘  └─────────────┘  └─────────────┘                       │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
