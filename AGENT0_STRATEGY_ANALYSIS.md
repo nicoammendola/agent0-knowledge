@@ -151,39 +151,39 @@ But this is:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         VERIFICATION TIERS                                   │
+│                         VERIFICATION TIERS                                  │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  Tier 0: UNVERIFIED                                                         │
-│  ────────────────────                                                        │
-│  • Anyone can register                                                       │
-│  • No verification required                                                  │
+│  ────────────────────                                                       │
+│  • Anyone can register                                                      │
+│  • No verification required                                                 │
 │  • Displayed with warning: "Unverified agent"                               │
-│                                                                              │
+│                                                                             │
 │  Tier 1: DOMAIN-VERIFIED                                                    │
-│  ────────────────────────                                                    │
+│  ────────────────────────                                                   │
 │  • Proves control of endpoint domain                                        │
 │  • Via .well-known/agent-registration.json                                  │
 │  • Badge: "Domain Verified ✓"                                               │
-│                                                                              │
+│                                                                             │
 │  Tier 2: SOCIAL-VERIFIED                                                    │
-│  ───────────────────────                                                     │
+│  ───────────────────────                                                    │
 │  • Linked Twitter/GitHub account                                            │
 │  • Cross-referenced with domain                                             │
 │  • Badge: "Social Verified ✓✓"                                              │
-│                                                                              │
+│                                                                             │
 │  Tier 3: STAKE-VERIFIED                                                     │
-│  ──────────────────────                                                      │
+│  ──────────────────────                                                     │
 │  • Economic stake locked                                                    │
 │  • Slashable for misbehavior                                                │
 │  • Badge: "Staked ✓✓✓"                                                      │
-│                                                                              │
+│                                                                             │
 │  Tier 4: AUDITOR-VERIFIED                                                   │
-│  ────────────────────────                                                    │
+│  ────────────────────────                                                   │
 │  • Third-party attestation                                                  │
 │  • Security audit passed                                                    │
 │  • Badge: "Audited ✓✓✓✓"                                                    │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -232,9 +232,9 @@ This was intentional (reducing friction) but shifts spam resistance to:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      REPUTATION SIGNAL WEIGHTING                             │
+│                      REPUTATION SIGNAL WEIGHTING                            │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  Signal Type              Weight    Verification                            │
 │  ─────────────────────────────────────────────────                          │
 │  Unverified feedback      1x        None (current default)                  │
@@ -243,13 +243,13 @@ This was intentional (reducing friction) but shifts spam resistance to:
 │  Verified reviewer        4x        Reviewer is Tier 2+ agent               │
 │  Long-term reviewer       2x        Wallet age > 6 months                   │
 │  Consistent reviewer      2x        History of non-extreme scores           │
-│                                                                              │
-│  Example:                                                                    │
-│  ─────────                                                                   │
+│                                                                             │
+│  Example:                                                                   │
+│  ─────────                                                                  │
 │  Random wallet gives 5 stars      → counts as 1 point                       │
 │  x402 payer gives 5 stars         → counts as 5 points                      │
 │  Staked + x402 payer gives 5 stars → counts as 8 points                     │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -292,37 +292,37 @@ Agent0 should NOT build consumer-facing explorers. Instead, focus on:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         COLD START STRATEGY                                  │
+│                         COLD START STRATEGY                                 │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  Phase 1: SEED (Month 1-2)                                                  │
-│  ─────────────────────────                                                   │
+│  ─────────────────────────                                                  │
 │  • Partner with 10 prominent agent builders                                 │
 │  • Register their agents for them (white-glove service)                     │
 │  • Create "Founding Agent" NFT badges                                       │
 │  • Subsidize gas costs for first 1000 registrations                         │
-│                                                                              │
+│                                                                             │
 │  Phase 2: CURATE (Month 2-3)                                                │
-│  ──────────────────────────                                                  │
+│  ──────────────────────────                                                 │
 │  • Publish curated agent lists (by category, use case)                      │
 │  • Provide verification tier data via API                                   │
 │  • Create "Agent0 Verified" badge program                                   │
 │  • Write case studies with early adopters                                   │
-│                                                                              │
+│                                                                             │
 │  Phase 3: INTEGRATE (Month 3-6)                                             │
-│  ─────────────────────────────                                               │
+│  ─────────────────────────────                                              │
 │  • LangChain plugin: one-line registration                                  │
 │  • CrewAI plugin: automatic agent discovery                                 │
 │  • VS Code extension: register from IDE                                     │
 │  • GitHub Action: register on deploy                                        │
-│                                                                              │
+│                                                                             │
 │  Phase 4: ECOSYSTEM (Month 6+)                                              │
-│  ─────────────────────────────                                               │
+│  ─────────────────────────────                                              │
 │  • Third-party explorers and marketplaces (built by others)                 │
 │  • Insurance/bonding integrations                                           │
 │  • Enterprise compliance tools                                              │
 │  • Aggregation across multiple registries                                   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -370,37 +370,37 @@ Let's explore the scenarios where ERC-8004 doesn't become "the" standard:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    FUTURE SCENARIOS FOR AGENT IDENTITY                       │
+│                    FUTURE SCENARIOS FOR AGENT IDENTITY                      │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  SCENARIO A: ERC-8004 WINS                                                  │
-│  ─────────────────────────────                                               │
+│  ─────────────────────────────                                              │
 │  • ERC-8004 becomes the dominant standard                                   │
 │  • Agent0 is the primary implementation                                     │
 │  • Network effects compound                                                 │
 │  → Agent0 = "the" registry                                                  │
-│                                                                              │
+│                                                                             │
 │  SCENARIO B: FRAGMENTED STANDARDS                                           │
-│  ────────────────────────────────                                            │
+│  ────────────────────────────────                                           │
 │  • Multiple ERCs emerge (ERC-8004, ERC-XXXX, ERC-YYYY)                      │
 │  • Non-blockchain solutions also exist                                      │
 │  • No single winner                                                         │
 │  → Agent0 = aggregator across all standards                                 │
-│                                                                              │
+│                                                                             │
 │  SCENARIO C: CENTRALIZED WINS                                               │
-│  ────────────────────────────                                                │
+│  ────────────────────────────                                               │
 │  • OpenAI/Anthropic directories dominate                                    │
 │  • Blockchain-based solutions are niche                                     │
 │  • Most agents register with platforms                                      │
 │  → Agent0 = trust/verification layer on top                                 │
-│                                                                              │
+│                                                                             │
 │  SCENARIO D: NO STANDARD EMERGES                                            │
-│  ───────────────────────────────                                             │
+│  ───────────────────────────────                                            │
 │  • Every framework has its own registry                                     │
 │  • Agents are siloed by ecosystem                                           │
 │  • Discovery is fragmented                                                  │
 │  → Agent0 = unified search across silos                                     │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -418,9 +418,9 @@ DNS is infrastructure that:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                     AGENT0 AS "DNS FOR AGENTS"                               │
+│                     AGENT0 AS "DNS FOR AGENTS"                              │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │                           ┌─────────────────┐                               │
 │                           │    AGENT0       │                               │
 │                           │  Trust Layer    │                               │
@@ -430,24 +430,24 @@ DNS is infrastructure that:
 │            ┌───────────────────────┼───────────────────────┐                │
 │            │                       │                       │                │
 │            ▼                       ▼                       ▼                │
-│   ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐        │
-│   │   ERC-8004      │    │    OpenAI       │    │   Other ERC     │        │
-│   │   Registry      │    │   Directory     │    │   / Standard    │        │
-│   └─────────────────┘    └─────────────────┘    └─────────────────┘        │
+│   ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐         │
+│   │   ERC-8004      │    │    OpenAI       │    │   Other ERC     │         │
+│   │   Registry      │    │   Directory     │    │   / Standard    │         │
+│   └─────────────────┘    └─────────────────┘    └─────────────────┘         │
 │            │                       │                       │                │
 │            ▼                       ▼                       ▼                │
-│   ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐        │
-│   │  MCP Agents     │    │  GPT Agents     │    │  Other Agents   │        │
-│   │  A2A Agents     │    │  Assistants     │    │                 │        │
-│   └─────────────────┘    └─────────────────┘    └─────────────────┘        │
-│                                                                              │
+│   ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐         │
+│   │  MCP Agents     │    │  GPT Agents     │    │  Other Agents   │         │
+│   │  A2A Agents     │    │  Assistants     │    │                 │         │
+│   └─────────────────┘    └─────────────────┘    └─────────────────┘         │
+│                                                                             │
 │  AGENT0 PROVIDES:                                                           │
 │  • Unified search across all registries                                     │
 │  • Verification tiers (works for any source)                                │
 │  • Trust scores (aggregated reputation)                                     │
 │  • Curated lists (quality signals)                                          │
 │  • APIs for explorer/marketplace builders                                   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -488,31 +488,31 @@ interface AgentSource {
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         REGISTRY ADAPTERS                                    │
+│                         REGISTRY ADAPTERS                                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  ERC-8004 Adapter                                                           │
-│  ─────────────────                                                           │
+│  ─────────────────                                                          │
 │  • Native support (Agent0's home turf)                                      │
 │  • Full read/write capabilities                                             │
 │  • Real-time event indexing via subgraph                                    │
-│                                                                              │
+│                                                                             │
 │  OpenAI Adapter (hypothetical)                                              │
-│  ─────────────────────────────                                               │
+│  ─────────────────────────────                                              │
 │  • Crawl GPT Store / Assistant directory                                    │
 │  • Read-only (can't write to OpenAI)                                        │
 │  • Periodic sync                                                            │
-│                                                                              │
+│                                                                             │
 │  LangChain Hub Adapter                                                      │
-│  ─────────────────────                                                       │
+│  ─────────────────────                                                      │
 │  • Index agents from LangChain Hub                                          │
 │  • Map LangChain schemas to universal model                                 │
-│                                                                              │
+│                                                                             │
 │  Custom API Adapter                                                         │
-│  ───────────────────                                                         │
+│  ───────────────────                                                        │
 │  • Generic adapter for any REST/GraphQL registry                            │
 │  • Configuration-driven mapping                                             │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -607,39 +607,39 @@ Instead of building an explorer, provide curated data that explorer builders use
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         CURATED LISTS API                                    │
+│                         CURATED LISTS API                                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  GET /api/v1/lists/featured                                                 │
-│  ──────────────────────────                                                  │
+│  ──────────────────────────                                                 │
 │  Returns: Top 50 agents hand-picked by Agent0 team                          │
 │  Use case: "Featured Agents" section in any explorer                        │
-│                                                                              │
+│                                                                             │
 │  GET /api/v1/lists/verified                                                 │
-│  ─────────────────────────                                                   │
+│  ─────────────────────────                                                  │
 │  Returns: All Tier 1+ verified agents                                       │
 │  Use case: "Verified Only" filter in any explorer                           │
-│                                                                              │
+│                                                                             │
 │  GET /api/v1/lists/category/{category}                                      │
-│  ─────────────────────────────────────                                       │
+│  ─────────────────────────────────────                                      │
 │  Returns: Top agents in a category (e.g., "coding", "data", "creative")     │
 │  Use case: Category browsing in any explorer                                │
-│                                                                              │
+│                                                                             │
 │  GET /api/v1/lists/rising                                                   │
-│  ────────────────────────                                                    │
+│  ────────────────────────                                                   │
 │  Returns: Agents with fastest-growing reputation                            │
 │  Use case: "Trending" section in any explorer                               │
-│                                                                              │
+│                                                                             │
 │  GET /api/v1/lists/enterprise                                               │
-│  ───────────────────────────                                                 │
+│  ───────────────────────────                                                │
 │  Returns: Agents meeting enterprise requirements (Tier 3+, audited)         │
 │  Use case: Enterprise procurement tools                                     │
-│                                                                              │
+│                                                                             │
 │  POST /api/v1/verify/{agentId}                                              │
-│  ────────────────────────────                                                │
+│  ────────────────────────────                                               │
 │  Trigger: Request verification for an agent                                 │
 │  Returns: Verification status and tier                                      │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
